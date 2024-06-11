@@ -1,0 +1,63 @@
+{
+  "id": "query_training_data",
+  "uuid": "119d947f-e466-46cb-8f6c-ece59ff81990",
+  "userSettings": [
+    {
+      "name": "searchServiceName",
+      "label": "Search Service Name",
+      "description": "Find this in the \"Azure AI Services\" section in the Azure portal.",
+      "required": true
+    },
+    {
+      "name": "indexName",
+      "label": "Index Name",
+      "description": "Find this in \"Search managements\" → \"Indexes\" page in the Azure portal.",
+      "required": true
+    },
+    {
+      "name": "queryKey",
+      "type": "password",
+      "label": "Query Key",
+      "description": "Find this in \"Settings\" → \"Keys\" page in the Azure portal.",
+      "required": true
+    },
+    {
+      "name": "apiVersion",
+      "label": "API Version",
+      "required": true,
+      "description": "Find the latest API version here: https://learn.microsoft.com/en-us/rest/api/searchservice/search-service-api-versions",
+      "defaultValue": "2023-11-01"
+    }
+  ],
+  "iconURL": "https://custom.typingmind.com/assets/models/azureopenai.png",
+  "title": "Query Training Data - Azure AI Search",
+  "openaiSpec": {
+    "name": "query_training_data",
+    "parameters": {
+      "type": "object",
+      "required": [
+        "query"
+      ],
+      "properties": {
+        "query": {
+          "type": "string",
+          "description": "The keywords or topics to search for the internal training data. Multiple keywords or topics are accepted (separated with commas)."
+        }
+      }
+    },
+    "description": "Search the internal training data for relevant information. When the user ask you something you don't know, you can use this function to search for relevant information in the internal training data. Don't use questions as search query, use keywords instead. The search query should contains the keywords or topics related to the conversation."
+  },
+  "httpAction": {
+    "id": "6a69b196-c5de-4550-9ad2-bf717f4808f2",
+    "url": "https://{searchServiceName}.search.windows.net/indexes/{indexName}/docs/search?api-version={apiVersion}",
+    "name": "",
+    "method": "POST",
+    "hasBody": true,
+    "hasHeaders": true,
+    "requestBody": "{\n  \"search\": \"{query}\"\n}",
+    "requestHeaders": "{\n  \"api-key\": \"{queryKey}\"\n}"
+  },
+  "implementationType": "http",
+  "system": true,
+  "outputType": "respond_to_ai"
+}
