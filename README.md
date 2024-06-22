@@ -1,10 +1,10 @@
-# Query Training Data from Azure AI Search (Cognitive Search)
+# Azure AI Search (Cognitive Search)
 
 This plugin connects TypingMind to your training data in Azure AI Search (Cognitive Search).
 
 ## How to use
 
-When the user ask the AI a question but the AI does not have the answer, the AI will query the training data in Azure AI Search to find the answer.
+When the user asks the AI a question but the AI does not have the answer, the AI will query the training data in Azure AI Search to find the answer.
 
 Sometimes, you need to ask the AI to specifically search from the training data if the AI does not do it automatically.
 
