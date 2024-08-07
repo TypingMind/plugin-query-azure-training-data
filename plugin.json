@@ -33,12 +33,9 @@
   "title": "Azure AI Search",
   "openaiSpec": {
     "name": "query_training_data",
-    "strict": true,
     "parameters": {
       "type": "object",
-      "required": [
-        "query"
-      ],
+      "required": ["query"],
       "properties": {
         "query": {
           "type": "string",
