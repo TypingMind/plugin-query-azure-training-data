@@ -29,7 +29,7 @@
       "defaultValue": "2023-11-01"
     }
   ],
-  "iconURL": "https://custom.typingmind.com/assets/models/azureopenai.png",
+  "iconURL": "https://custom.typingmind.com/assets/plugins/azure.webp",
   "title": "Azure AI Search",
   "openaiSpec": {
     "name": "query_training_data",
